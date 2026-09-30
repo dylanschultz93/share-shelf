@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="design_doc_mode" content="canvas"><link rel="stylesheet" href="ds/styles.css"><style>body{margin:0;background:#e8e0d2}a{color:#8c491a}a:hover{color:#643312}.dv-turn{padding:40px 44px 40px;scroll-margin-top:16px}.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 16px}.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#201e1d;color:#fff;border-radius:4px;text-decoration:none}.dv-tname{font:600 13px/1.2 Figtree,system-ui,sans-serif;color:#201e1d}.dv-opts{display:flex;flex-wrap:wrap;gap:44px 36px;align-items:flex-start}.dv-opt{flex:none;display:flex;flex-direction:column;gap:14px;scroll-margin-top:16px}.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#201e1d;border-radius:5px;text-decoration:none}.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 12px/1.3 Figtree,system-ui,sans-serif;color:rgba(0,0,0,.6)}.dv-opt:target .dv-oid{background:#c67139;color:#fff}.dv-next{margin:36px 0 0;font:13px/1.5 Figtree,system-ui,sans-serif;color:rgba(0,0,0,.55)}</style></helmet>
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Share Shelf: first pass at the core flows</span></div>
+<div style="max-width:760px;margin:0 0 36px;font-family:var(--font-body);font-size:14px;line-height:1.55;color:var(--color-text)">
+<div style="font-family:var(--font-heading);font-size:26px;line-height:1.15;margin-bottom:12px">What I'm assuming</div>
+<div style="display:grid;gap:6px">
+<div><b>One app, two front doors.</b> Parents land on <i>Classrooms need</i>. Staff land on <i>Up for grabs</i>. Everyone can see both tabs.</div>
+<div><b>Sign in with an email link, no passwords.</b> A board member approves each new person once. After that the phone stays signed in.</div>
+<div><b>Posting starts with the camera.</b> Take a photo, give it a name, say when it expires, and it's posted. Needs also get a quantity and an optional link to buy.</div>
+<div><b>Claims are first come, first served.</b> The other person gets an email, and the handoff happens at drop-off or pickup.</div>
+<div><b>Expiration is a set of quick buttons plus a custom date.</b> When a post expires it quietly comes down and the owner gets an email.</div>
+<div>Two ways to browse, for comparison: a gallery grid (<a class="dv-oid" href="#1c">1c</a>) and swipe cards (<a class="dv-oid" href="#1d">1d</a>). <i>Share Shelf</i> is a working name.</div>
+</div>
+</div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a"><div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Sign in: from the QR poster or newsletter link</div>
+<div data-screen-label="1a Sign in" style="width:390px;height:844px;border-radius:44px;background:var(--color-bg);overflow:hidden;display:flex;flex-direction:column;font-family:var(--font-body);color:var(--color-text);box-shadow:0 0 0 10px #201e1d,var(--shadow-lg);margin:10px">
+<div style="height:48px;flex:none;display:flex;align-items:center;padding:0 30px;font-size:15px;font-weight:600">9:41</div>
+<div style="flex:1;display:flex;flex-direction:column;padding:24px 28px 40px;position:relative;overflow:hidden">
+<div style="position:absolute;right:-90px;top:-40px;width:260px;height:260px;border-radius:50%;background:var(--color-accent-2-300)"></div>
+<div style="position:absolute;right:40px;top:150px;width:90px;height:90px;border-radius:50%;background:var(--color-accent-300)"></div>
+<div style="position:relative;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-700);font-weight:700;margin-top:210px">Clayton Early Childhood Center</div>
+<div style="position:relative;font-family:var(--font-heading);font-size:46px;line-height:1.02;margin:10px 0 14px">Share Shelf</div>
+<div style="position:relative;font-size:17px;line-height:1.45;max-width:290px;text-wrap:pretty">Give away what you don't need. See what the classrooms are asking for.</div>
+<div style="flex:1"></div>
+<label style="font-size:13px;color:var(--color-neutral-700);margin-bottom:6px">Your email</label>
+<div style="height:52px;border-radius:999px;background:var(--color-neutral-100);border:1px solid var(--color-divider);display:flex;align-items:center;padding:0 20px;font-size:16px">sam.kowalski@gmail.com</div>
+<div style="height:54px;margin-top:12px;border-radius:999px;background:var(--color-accent);color:var(--color-bg);display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-heading);font-size:17px;cursor:pointer" style-hover="background:var(--color-accent-600)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>Email me a sign-in link</div>
+<div style="font-size:13px;color:var(--color-neutral-700);margin-top:14px;text-align:center">For CECC families and staff only. No password needed.</div>
+</div>
+</div></div>
+
+<div class="dv-opt" id="1b"><div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>First visit only: tell us who you are</div>
+<div data-screen-label="1b Who are you" style="width:390px;height:844px;border-radius:44px;background:var(--color-bg);overflow:hidden;display:flex;flex-direction:column;font-family:var(--font-body);color:var(--color-text);box-shadow:0 0 0 10px #201e1d,var(--shadow-lg);margin:10px">
+<div style="height:48px;flex:none;display:flex;align-items:center;padding:0 30px;font-size:15px;font-weight:600">9:41</div>
+<div style="flex:1;display:flex;flex-direction:column;padding:20px 24px 40px">
+<div style="font-family:var(--font-heading);font-size:30px;line-height:1.1;margin-bottom:6px">Welcome! Quick setup.</div>
+<div style="font-size:15px;color:var(--color-neutral-700);margin-bottom:22px">Just this once.</div>
+<div style="font-size:13px;font-weight:700;margin-bottom:8px">I'm a…</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px">
+<div style="height:64px;border-radius:22px;background:var(--color-accent-100);border:2px solid var(--color-accent);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:18px;color:var(--color-accent-800)">Parent</div>
+<div style="height:64px;border-radius:22px;background:var(--color-neutral-100);border:2px solid transparent;display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:18px">Staff</div>
+</div>
+<div style="font-size:13px;font-weight:700;margin-bottom:8px">My child's classroom <span style="font-weight:400;color:var(--color-neutral-700)">(pick all that apply)</span></div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<sc-for list="{{ rooms }}" as="r" hint-placeholder-count="11">
+<sc-if value="{{ r.on }}"><div onClick="{{ r.toggle }}" style="height:40px;padding:0 16px;border-radius:999px;background:var(--color-accent-2-600);color:#fff;display:flex;align-items:center;font-size:15px;font-weight:600;cursor:pointer">{{ r.name }}</div></sc-if>
+<sc-if value="{{ r.off }}"><div onClick="{{ r.toggle }}" style="height:40px;padding:0 16px;border-radius:999px;background:var(--color-neutral-100);border:1px solid var(--color-divider);display:flex;align-items:center;font-size:15px;cursor:pointer">{{ r.name }}</div></sc-if>
+</sc-for>
+</div>
+<div style="flex:1"></div>
+<div style="display:flex;gap:10px;padding:14px 16px;border-radius:20px;background:var(--color-accent-2-100);color:var(--color-accent-2-800);font-size:14px;line-height:1.4;margin-bottom:14px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:1px"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>A board member will approve you, usually within a day. You can look around in the meantime.</span></div>
+<div style="height:54px;border-radius:999px;background:var(--color-accent);color:var(--color-bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:17px">Done</div>
+</div>
+</div></div>
+
+<div class="dv-opt" id="1c"><div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Parent home, gallery. Most urgent first</div>
+<div data-screen-label="1c Parent home gallery" style="width:390px;height:844px;border-radius:44px;background:var(--color-bg);overflow:hidden;display:flex;flex-direction:column;font-family:var(--font-body);color:var(--color-text);box-shadow:0 0 0 10px #201e1d,var(--shadow-lg);margin:10px">
+<div style="height:48px;flex:none;display:flex;align-items:center;padding:0 30px;font-size:15px;font-weight:600">9:41</div>
+<div style="flex:none;padding:8px 20px 0">
+<div style="font-size:14px;color:var(--color-neutral-700)">Hi, Sam</div>
+<div style="font-family:var(--font-heading);font-size:30px;line-height:1.1;margin:2px 0 14px">Classrooms need</div>
+<div style="display:flex;padding:4px;border-radius:999px;background:var(--color-surface);margin-bottom:12px">
+<div style="flex:1;height:38px;border-radius:999px;background:var(--color-neutral-100);box-shadow:var(--shadow-sm);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700">Wishlist · 6</div>
+<div style="flex:1;height:38px;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--color-neutral-700)">Up for grabs · 9</div>
+</div>
+<div style="display:flex;gap:8px;overflow:hidden;padding-bottom:12px">
+<div style="flex:none;height:34px;padding:0 14px;border-radius:999px;background:var(--color-text);color:var(--color-bg);display:flex;align-items:center;font-size:14px;font-weight:600">All rooms</div>
+<div style="flex:none;height:34px;padding:0 14px;border-radius:999px;border:1px solid var(--color-divider);display:flex;align-items:center;font-size:14px">Owl (Maya's)</div>
+<div style="flex:none;height:34px;padding:0 14px;border-radius:999px;border:1px solid var(--color-divider);display:flex;align-items:center;font-size:14px">Bunny</div>
+<div style="flex:none;height:34px;padding:0 14px;border-radius:999px;border:1px solid var(--color-divider);display:flex;align-items:center;font-size:14px">Turtles</div>
+</div>
+</div>
+<div style="flex:1;overflow:hidden;padding:0 20px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<sc-for list="{{ needs }}" as="n" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:6px">
+<div style="aspect-ratio:1;border-radius:24px;background:repeating-linear-gradient(135deg,var(--color-neutral-200) 0 7px,var(--color-neutral-100) 7px 14px);display:flex;align-items:flex-end;padding:10px;position:relative">
+<span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-neutral-700)">{{ n.img }}</span>
+<sc-if value="{{ n.soon }}"><span style="position:absolute;top:8px;left:8px;padding:3px 10px;border-radius:999px;background:var(--color-accent);color:#fff;font-size:12px;font-weight:700">{{ n.due }}</span></sc-if>
+<sc-if value="{{ n.later }}"><span style="position:absolute;top:8px;left:8px;padding:3px 10px;border-radius:999px;background:var(--color-neutral-100);color:var(--color-neutral-800);font-size:12px;font-weight:600">{{ n.due }}</span></sc-if>
+</div>
+<div style="font-weight:700;font-size:15px;line-height:1.25">{{ n.title }}</div>
+<div style="font-size:13px;color:var(--color-neutral-700);margin-top:-4px">{{ n.room }} · needs {{ n.qty }}</div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="flex:none;display:flex;align-items:center;justify-content:space-around;padding:10px 30px 26px;background:var(--color-neutral-100);border-top:1px solid var(--color-divider)">
+<div style="display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px;font-weight:700;color:var(--color-accent-700)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"></rect><rect width="7" height="7" x="14" y="3" rx="1"></rect><rect width="7" height="7" x="14" y="14" rx="1"></rect><rect width="7" height="7" x="3" y="14" rx="1"></rect></svg>Browse</div>
+<div style="width:60px;height:60px;border-radius:50%;background:var(--color-accent);color:#fff;display:flex;align-items:center;justify-content:center;margin-top:-26px;box-shadow:var(--shadow-md)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px;color:var(--color-neutral-700)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"></circle><path d="M20 21a8 8 0 0 0-16 0"></path></svg>Mine</div>
+</div>
+</div></div>
+
+<div class="dv-opt" id="1d"><div class="dv-olabel"><a class="dv-oid" href="#1d">1d</a>Parent home, swipe. Tap the buttons to try it</div>
+<div data-screen-label="1d Parent home swipe" style="width:390px;height:844px;border-radius:44px;background:var(--color-bg);overflow:hidden;display:flex;flex-direction:column;font-family:var(--font-body);color:var(--color-text);box-shadow:0 0 0 10px #201e1d,var(--shadow-lg);margin:10px">
+<div style="height:48px;flex:none;display:flex;align-items:center;padding:0 30px;font-size:15px;font-weight:600">9:41</div>
+<div style="flex:none;padding:8px 20px 14px;display:flex;align-items:flex-end;justify-content:space-between">
+<div><div style="font-size:14px;color:var(--color-neutral-700)">Hi, Sam</div><div style="font-family:var(--font-heading);font-size:30px;line-height:1.1">Can you help?</div></div>
+<div style="font-size:14px;font-weight:600;color:var(--color-neutral-700);padding-bottom:4px">{{ swipePos }} of {{ swipeTotal }}</div>
+</div>
+<div style="flex:1;position:relative;padding:0 20px">
+<div style="position:absolute;left:36px;right:36px;top:14px;bottom:10px;border-radius:32px;background:var(--color-surface)"></div>
+<div style="position:absolute;left:28px;right:28px;top:7px;bottom:17px;border-radius:32px;background:var(--color-neutral-200)"></div>
+<div style="position:absolute;left:20px;right:20px;top:0;bottom:24px;border-radius:32px;background:var(--color-neutral-100);box-shadow:var(--shadow-md);overflow:hidden;display:flex;flex-direction:column">
+<div style="flex:1;background:repeating-linear-gradient(135deg,var(--color-neutral-200) 0 8px,var(--color-neutral-100) 8px 16px);display:flex;align-items:flex-end;padding:16px;position:relative">
+<span style="font:12px ui-monospace,Menlo,monospace;color:var(--color-neutral-700)">{{ card.img }}</span>
+<span style="position:absolute;top:16px;left:16px;padding:5px 12px;border-radius:999px;background:var(--color-accent);color:#fff;font-size:13px;font-weight:700">{{ card.due }}</span>
+</div>
+<div style="flex:none;padding:18px 20px 20px">
+<div style="font-family:var(--font-heading);font-size:26px;line-height:1.1;margin-bottom:6px">{{ card.title }}</div>
+<div style="font-size:15px;color:var(--color-neutral-700)">{{ card.room }} room · {{ card.teacher }} · needs {{ card.qty }}</div>
+</div>
+</div>
+</div>
+<div style="flex:none;display:flex;gap:12px;padding:0 20px 14px">
+<div onClick="{{ skip }}" style="flex:1;height:58px;border-radius:999px;border:1.5px solid var(--color-divider);display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-heading);font-size:17px;cursor:pointer" style-hover="background:var(--color-neutral-200)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>Not me</div>
+<div onClick="{{ skip }}" style="flex:1.3;height:58px;border-radius:999px;background:var(--color-accent-2-600);color:#fff;display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-heading);font-size:17px;cursor:pointer" style-hover="background:var(--color-accent-2-700)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>I have this</div>
+</div>
+<div style="flex:none;display:flex;align-items:center;justify-content:space-around;padding:10px 30px 26px;background:var(--color-neutral-100);border-top:1px solid var(--color-divider)">
+<div style="display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px;font-weight:700;color:var(--color-accent-700)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"></rect><rect width="7" height="7" x="14" y="3" rx="1"></rect><rect width="7" height="7" x="14" y="14" rx="1"></rect><rect width="7" height="7" x="3" y="14" rx="1"></rect></svg>Browse</div>
+<div style="width:60px;height:60px;border-radius:50%;background:var(--color-accent);color:#fff;display:flex;align-items:center;justify-content:center;margin-top:-26px;box-shadow:var(--shadow-md)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px;color:var(--color-neutral-700)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"></circle><path d="M20 21a8 8 0 0 0-16 0"></path></svg>Mine</div>
+</div>
+</div></div>
+
+<div class="dv-opt" id="1e"><div class="dv-olabel"><a class="dv-oid" href="#1e">1e</a>Need detail: claim some or all of it</div>
+<div data-screen-label="1e Need detail" style="width:390px;height:844px;border-radius:44px;background:var(--color-bg);overflow:hidden;display:flex;flex-direction:column;font-family:var(--font-body);color:var(--color-text);box-shadow:0 0 0 10px #201e1d,var(--shadow-lg);margin:10px">
+<div style="flex:none;height:360px;background:repeating-linear-gradient(135deg,var(--color-neutral-200) 0 8px,var(--color-neutral-100) 8px 16px);position:relative;display:flex;align-items:flex-end;padding:16px 20px">
+<div style="position:absolute;top:54px;left:20px;width:44px;height:44px;border-radius:50%;background:var(--color-neutral-100);box-shadow:var(--shadow-sm);display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg></div>
+<span style="font:12px ui-monospace,Menlo,monospace;color:var(--color-neutral-700)">teacher's photo: play-doh tubs</span>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;padding:22px 22px 36px">
+<div style="display:flex;gap:8px;margin-bottom:10px"><span style="padding:4px 12px;border-radius:999px;background:var(--color-accent-2-100);color:var(--color-accent-2-800);font-size:13px;font-weight:600">Owl room</span><span style="padding:4px 12px;border-radius:999px;background:var(--color-accent-100);color:var(--color-accent-800);font-size:13px;font-weight:600">Needed by Wed, Oct 15</span></div>
+<div style="font-family:var(--font-heading);font-size:30px;line-height:1.1;margin-bottom:6px">Play-Doh, any colors</div>
+<div style="font-size:15px;color:var(--color-neutral-700);margin-bottom:14px">Asked by Ms. Rivera · 3 of 6 still needed</div>
+<div style="display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:var(--color-accent-700)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>Or buy it online</div>
+<div style="flex:1"></div>
+<div style="display:flex;align-items:center;justify-content:space-between;padding:10px 10px 10px 20px;border-radius:999px;background:var(--color-surface);margin-bottom:12px">
+<span style="font-size:15px;font-weight:600">I can bring</span>
+<div style="display:flex;align-items:center;gap:6px">
+<div onClick="{{ dec }}" style="width:44px;height:44px;border-radius:50%;background:var(--color-neutral-100);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer">−</div>
+<span style="width:36px;text-align:center;font-family:var(--font-heading);font-size:22px">{{ qty }}</span>
+<div onClick="{{ inc }}" style="width:44px;height:44px;border-radius:50%;background:var(--color-neutral-100);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer">+</div>
+</div>
+</div>
+<div style="height:56px;border-radius:999px;background:var(--color-accent);color:var(--color-bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:18px;cursor:pointer" style-hover="background:var(--color-accent-600)">I'll bring {{ qty }}</div>
+<div style="font-size:13px;color:var(--color-neutral-700);text-align:center;margin-top:10px">Bring it to the Owl room at drop-off or pickup.</div>
+</div>
+</div></div>
+
+<div class="dv-opt" id="1f"><div class="dv-olabel"><a class="dv-oid" href="#1f">1f</a>Claimed: what to do next</div>
+<div data-screen-label="1f Claimed" style="width:390px;height:844px;border-radius:44px;background:var(--color-bg);overflow:hidden;display:flex;flex-direction:column;font-family:var(--font-body);color:var(--color-text);box-shadow:0 0 0 10px #201e1d,var(--shadow-lg);margin:10px">
+<div style="height:48px;flex:none;display:flex;align-items:center;padding:0 30px;font-size:15px;font-weight:600">9:41</div>
+<div style="flex:1;display:flex;flex-direction:column;padding:60px 26px 36px">
+<div style="width:96px;height:96px;border-radius:50%;background:var(--color-accent-2-600);color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:26px"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></div>
+<div style="font-family:var(--font-heading);font-size:36px;line-height:1.05;margin-bottom:12px">It's yours to bring</div>
+<div style="font-size:17px;line-height:1.45;margin-bottom:26px;text-wrap:pretty">We emailed Ms. Rivera to let her know it's coming.</div>
+<div style="display:flex;gap:14px;align-items:center;padding:14px;border-radius:26px;background:var(--color-surface)">
+<div style="width:64px;height:64px;flex:none;border-radius:18px;background:repeating-linear-gradient(135deg,var(--color-neutral-200) 0 6px,var(--color-neutral-100) 6px 12px)"></div>
+<div style="display:flex;flex-direction:column;gap:3px;font-size:14px"><b style="font-size:16px">3 Play-Doh</b><span>To the <b>Owl room</b> at drop-off or pickup</span><span style="color:var(--color-accent-700);font-weight:700">By Wed, Oct 15</span></div>
+</div>
+<div style="flex:1"></div>
+<div style="height:56px;border-radius:999px;background:var(--color-accent);color:var(--color-bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:18px">Back to browsing</div>
+<div style="font-size:14px;color:var(--color-accent-700);font-weight:600;text-align:center;margin-top:14px">Changed your mind? Release it</div>
+</div>
+</div></div>
+
+<div class="dv-opt" id="1g"><div class="dv-olabel"><a class="dv-oid" href="#1g">1g</a>Post an item, step 1: the camera opens right away</div>
+<div data-screen-label="1g Camera" style="width:390px;height:844px;border-radius:44px;background:#201e1d;overflow:hidden;display:flex;flex-direction:column;font-family:var(--font-body);color:#f5ead8;box-shadow:0 0 0 10px #201e1d,var(--shadow-lg);margin:10px">
+<div style="height:48px;flex:none;display:flex;align-items:center;padding:0 30px;font-size:15px;font-weight:600">9:41</div>
+<div style="flex:none;display:flex;align-items:center;justify-content:space-between;padding:6px 20px 14px">
+<div style="width:44px;height:44px;border-radius:50%;background:rgba(245,234,216,.14);display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></div>
+<div style="font-family:var(--font-heading);font-size:18px">What are you giving away?</div>
+<div style="width:44px"></div>
+</div>
+<div style="flex:1;margin:0 14px;border-radius:32px;background:repeating-linear-gradient(135deg,#34302c 0 9px,#2b2825 9px 18px);display:flex;align-items:center;justify-content:center">
+<span style="font:12px ui-monospace,Menlo,monospace;color:#a19786">live camera view</span>
+</div>
+<div style="flex:none;display:flex;align-items:center;justify-content:space-between;padding:26px 40px 40px">
+<div style="width:52px;height:52px;border-radius:14px;background:repeating-linear-gradient(135deg,#645c50 0 5px,#474238 5px 10px);display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5ead8" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path></svg></div>
+<div style="width:84px;height:84px;border-radius:50%;border:4px solid #f5ead8;display:flex;align-items:center;justify-content:center"><div style="width:66px;height:66px;border-radius:50%;background:var(--color-accent)"></div></div>
+<div style="width:52px;font-size:12px;text-align:center;line-height:1.2;color:#dcd3c4">Photo library</div>
+</div>
+</div></div>
+
+<div class="dv-opt" id="1h"><div class="dv-olabel"><a class="dv-oid" href="#1h">1h</a>Post an item, step 2: a name and an expiration. That's it</div>
+<div data-screen-label="1h Item details" style="width:390px;height:844px;border-radius:44px;background:var(--color-bg);overflow:hidden;display:flex;flex-direction:column;font-family:var(--font-body);color:var(--color-text);box-shadow:0 0 0 10px #201e1d,var(--shadow-lg);margin:10px">
+<div style="height:48px;flex:none;display:flex;align-items:center;padding:0 30px;font-size:15px;font-weight:600">9:41</div>
+<div style="flex:1;display:flex;flex-direction:column;padding:10px 22px 36px">
+<div style="display:flex;gap:12px;align-items:flex-end;margin-bottom:26px">
+<div style="width:150px;height:150px;border-radius:30px;background:repeating-linear-gradient(135deg,var(--color-neutral-200) 0 7px,var(--color-neutral-100) 7px 14px);display:flex;align-items:flex-end;padding:10px"><span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-neutral-700)">your photo</span></div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="width:64px;height:64px;border-radius:20px;border:2px dashed var(--color-neutral-400);display:flex;align-items:center;justify-content:center;color:var(--color-neutral-600)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></div>
+<span style="font-size:13px;color:var(--color-accent-700);font-weight:600">Retake</span>
+</div>
+</div>
+<div style="font-size:14px;font-weight:700;margin-bottom:8px">What is it?</div>
+<div style="height:54px;border-radius:999px;background:var(--color-neutral-100);border:2px solid var(--color-accent);display:flex;align-items:center;padding:0 20px;font-size:17px;margin-bottom:26px">Wooden train set<span style="width:2px;height:22px;background:var(--color-accent);margin-left:2px"></span></div>
+<div style="font-size:14px;font-weight:700;margin-bottom:8px">Take it by</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px">
+<sc-for list="{{ itemChips }}" as="c" hint-placeholder-count="5">
+<sc-if value="{{ c.on }}"><div onClick="{{ c.pick }}" style="height:44px;padding:0 18px;border-radius:999px;background:var(--color-text);color:var(--color-bg);display:flex;align-items:center;gap:6px;font-size:15px;font-weight:600;cursor:pointer">{{ c.label }}</div></sc-if>
+<sc-if value="{{ c.off }}"><div onClick="{{ c.pick }}" style="height:44px;padding:0 18px;border-radius:999px;background:var(--color-neutral-100);border:1px solid var(--color-divider);display:flex;align-items:center;gap:6px;font-size:15px;cursor:pointer">{{ c.label }}</div></sc-if>
+</sc-for>
+</div>
+<div style="font-size:13px;color:var(--color-neutral-700);line-height:1.45">When it expires, we'll quietly take it down and email you. It's your cue for the Goodwill run.</div>
+<div style="flex:1"></div>
+<div style="font-size:13px;color:var(--color-neutral-700);text-align:center;margin-bottom:10px">If a teacher claims it, bring it to their room at drop-off or pickup.</div>
+<div style="height:56px;border-radius:999px;background:var(--color-accent);color:var(--color-bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:18px">Post it</div>
+</div>
+</div></div>
+
+<div class="dv-opt" id="1i"><div class="dv-olabel"><a class="dv-oid" href="#1i">1i</a>Teacher home: up for grabs, tap to claim</div>
+<div data-screen-label="1i Teacher home" style="width:390px;height:844px;border-radius:44px;background:var(--color-bg);overflow:hidden;display:flex;flex-direction:column;font-family:var(--font-body);color:var(--color-text);box-shadow:0 0 0 10px #201e1d,var(--shadow-lg);margin:10px">
+<div style="height:48px;flex:none;display:flex;align-items:center;padding:0 30px;font-size:15px;font-weight:600">9:41</div>
+<div style="flex:none;padding:8px 20px 0">
+<div style="font-size:14px;color:var(--color-neutral-700)">Ms. Rivera · Owl room</div>
+<div style="font-family:var(--font-heading);font-size:30px;line-height:1.1;margin:2px 0 14px">Up for grabs</div>
+<div style="display:flex;gap:12px;align-items:center;padding:12px 14px;border-radius:22px;background:var(--color-accent-2-100);color:var(--color-accent-2-800);margin-bottom:12px">
+<div style="width:36px;height:36px;flex:none;border-radius:50%;background:var(--color-accent-2-600);color:#fff;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></div>
+<div style="font-size:14px;line-height:1.35"><b>Coming your way:</b> 3 Play-Doh from Sam K. and board books from the Lees.</div>
+</div>
+<div style="display:flex;padding:4px;border-radius:999px;background:var(--color-surface);margin-bottom:14px">
+<div style="flex:1;height:38px;border-radius:999px;background:var(--color-neutral-100);box-shadow:var(--shadow-sm);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700">Up for grabs · 9</div>
+<div style="flex:1;height:38px;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--color-neutral-700)">Our wishlist · 3</div>
+</div>
+</div>
+<div style="flex:1;overflow:hidden;padding:0 20px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+<sc-for list="{{ items }}" as="it" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:6px">
+<div style="aspect-ratio:1;border-radius:24px;background:repeating-linear-gradient(135deg,var(--color-neutral-200) 0 7px,var(--color-neutral-100) 7px 14px);display:flex;align-items:flex-end;padding:10px;position:relative">
+<span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-neutral-700)">{{ it.img }}</span>
+<span style="position:absolute;top:8px;left:8px;padding:3px 10px;border-radius:999px;background:var(--color-neutral-100);color:var(--color-neutral-800);font-size:12px;font-weight:600">{{ it.due }}</span>
+</div>
+<div style="display:flex;align-items:center;gap:6px">
+<div style="flex:1;min-width:0"><div style="font-weight:700;font-size:15px;line-height:1.25">{{ it.title }}</div><div style="font-size:13px;color:var(--color-neutral-700)">{{ it.from }}</div></div>
+<sc-if value="{{ it.claimed }}"><div onClick="{{ it.toggle }}" style="flex:none;height:36px;padding:0 12px;border-radius:999px;background:var(--color-accent-2-600);color:#fff;display:flex;align-items:center;font-size:13px;font-weight:700;cursor:pointer">Yours</div></sc-if>
+<sc-if value="{{ it.open }}"><div onClick="{{ it.toggle }}" style="flex:none;height:36px;padding:0 14px;border-radius:999px;background:var(--color-accent);color:#fff;display:flex;align-items:center;font-size:13px;font-weight:700;cursor:pointer">Claim</div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="flex:none;display:flex;align-items:center;justify-content:space-around;padding:10px 30px 26px;background:var(--color-neutral-100);border-top:1px solid var(--color-divider)">
+<div style="display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px;font-weight:700;color:var(--color-accent-700)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"></rect><rect width="7" height="7" x="14" y="3" rx="1"></rect><rect width="7" height="7" x="14" y="14" rx="1"></rect><rect width="7" height="7" x="3" y="14" rx="1"></rect></svg>Browse</div>
+<div style="width:60px;height:60px;border-radius:50%;background:var(--color-accent);color:#fff;display:flex;align-items:center;justify-content:center;margin-top:-26px;box-shadow:var(--shadow-md)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px;color:var(--color-neutral-700)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"></circle><path d="M20 21a8 8 0 0 0-16 0"></path></svg>Mine</div>
+</div>
+</div></div>
+
+<div class="dv-opt" id="1j"><div class="dv-olabel"><a class="dv-oid" href="#1j">1j</a>Teacher posts a need. The photo is optional</div>
+<div data-screen-label="1j Post a need" style="width:390px;height:844px;border-radius:44px;background:var(--color-bg);overflow:hidden;display:flex;flex-direction:column;font-family:var(--font-body);color:var(--color-text);box-shadow:0 0 0 10px #201e1d,var(--shadow-lg);margin:10px">
+<div style="height:48px;flex:none;display:flex;align-items:center;padding:0 30px;font-size:15px;font-weight:600">9:41</div>
+<div style="flex:1;display:flex;flex-direction:column;padding:6px 22px 36px">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+<div style="font-family:var(--font-heading);font-size:28px;line-height:1.1">Ask for something</div>
+<span style="padding:4px 12px;border-radius:999px;background:var(--color-accent-2-100);color:var(--color-accent-2-800);font-size:13px;font-weight:600">Owl room</span>
+</div>
+<div style="display:flex;gap:12px;margin-bottom:22px">
+<div style="width:96px;height:96px;flex:none;border-radius:26px;background:repeating-linear-gradient(135deg,var(--color-neutral-200) 0 7px,var(--color-neutral-100) 7px 14px);display:flex;align-items:flex-end;padding:8px"><span style="font:10px ui-monospace,Menlo,monospace;color:var(--color-neutral-700)">example photo</span></div>
+<div style="display:flex;flex-direction:column;justify-content:center;gap:4px;font-size:14px;color:var(--color-neutral-700)"><span style="color:var(--color-accent-700);font-weight:700">Change photo</span><span>A photo of what you want helps parents recognize it.</span></div>
+</div>
+<div style="font-size:14px;font-weight:700;margin-bottom:8px">What do you need?</div>
+<div style="height:52px;border-radius:999px;background:var(--color-neutral-100);border:1px solid var(--color-divider);display:flex;align-items:center;padding:0 20px;font-size:17px;margin-bottom:18px">Play-Doh, any colors</div>
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+<span style="font-size:14px;font-weight:700">How many?</span>
+<div style="display:flex;align-items:center;gap:6px;padding:4px;border-radius:999px;background:var(--color-surface)">
+<div onClick="{{ needDec }}" style="width:44px;height:44px;border-radius:50%;background:var(--color-neutral-100);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer">−</div>
+<span style="width:36px;text-align:center;font-family:var(--font-heading);font-size:22px">{{ needQty }}</span>
+<div onClick="{{ needInc }}" style="width:44px;height:44px;border-radius:50%;background:var(--color-neutral-100);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer">+</div>
+</div>
+</div>
+<div style="font-size:14px;font-weight:700;margin-bottom:8px">Needed by</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px">
+<sc-for list="{{ needChips }}" as="c" hint-placeholder-count="5">
+<sc-if value="{{ c.on }}"><div onClick="{{ c.pick }}" style="height:44px;padding:0 16px;border-radius:999px;background:var(--color-text);color:var(--color-bg);display:flex;align-items:center;font-size:15px;font-weight:600;cursor:pointer">{{ c.label }}</div></sc-if>
+<sc-if value="{{ c.off }}"><div onClick="{{ c.pick }}" style="height:44px;padding:0 16px;border-radius:999px;background:var(--color-neutral-100);border:1px solid var(--color-divider);display:flex;align-items:center;font-size:15px;cursor:pointer">{{ c.label }}</div></sc-if>
+</sc-for>
+</div>
+<div style="font-size:14px;font-weight:700;margin-bottom:8px">Link to buy <span style="font-weight:400;color:var(--color-neutral-700)">(optional)</span></div>
+<div style="height:52px;border-radius:999px;background:var(--color-neutral-100);border:1px solid var(--color-divider);display:flex;align-items:center;gap:10px;padding:0 20px;font-size:16px;color:var(--color-neutral-600)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>Paste a link</div>
+<div style="flex:1"></div>
+<div style="font-size:13px;color:var(--color-neutral-700);text-align:center;margin-bottom:10px">If it's not claimed by then, it comes down and we'll email you.</div>
+<div style="height:56px;border-radius:999px;background:var(--color-accent);color:var(--color-bg);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:18px">Add to wishlist</div>
+</div>
+</div></div>
+
+</div>
+<p class="dv-next">Try next: "go with swipe (<a class="dv-oid" href="#1d">1d</a>) for parents and gallery for teachers" · "show the 'Mine' screen and the expiry email" · "design the QR poster for the sign-in desk"</p>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { rooms: ['Owl'], swipe: 0, qty: 3, itemExp: 'This weekend', needExp: 'Oct 15', needQty: 6, claimed: ['Magnetic tiles'] };
+  needs = [
+    { title: 'Toddler rain boots, size 6–8', room: 'Turtles', teacher: 'Mr. Okafor', qty: 3, due: 'Thu', soon: true, img: 'rain boots' },
+    { title: 'Play-Doh, any colors', room: 'Owl', teacher: 'Ms. Rivera', qty: 3, due: 'Oct 15', soon: true, img: 'play-doh tubs' },
+    { title: 'Empty paper towel tubes', room: 'Caterpillar', teacher: 'Ms. Hart', qty: 30, due: 'Oct 20', soon: false, img: 'cardboard tubes' },
+    { title: 'Board books', room: 'Bunny', teacher: 'Ms. Chen', qty: 10, due: 'No rush', soon: false, img: 'board books' },
+    { title: 'Magnetic tiles', room: 'Cardinal', teacher: 'Ms. Diaz', qty: 1, due: 'Nov 1', soon: false, img: 'magnet tiles' },
+    { title: 'Dress-up clothes', room: 'Frog', teacher: 'Mr. Park', qty: 8, due: 'No rush', soon: false, img: 'dress-up bin' }
+  ];
+  items = [
+    { title: 'Wooden train set', from: 'Jess P. · Duckling', due: 'Gone Sat', img: 'train set' },
+    { title: 'Magnetic tiles', from: 'The Lees · Owl', due: '2 weeks', img: 'magnet tiles' },
+    { title: 'Puzzles (4)', from: 'Dan M. · Frog', due: 'Gone Sun', img: 'puzzles' },
+    { title: 'Play kitchen', from: 'Priya S. · Ladybug', due: '1 month', img: 'play kitchen' }
+  ];
+  chips(list, cur, key) {
+    return list.map(label => ({ label, on: cur === label, off: cur !== label, pick: () => this.setState({ [key]: label }) }));
+  }
+  renderVals() {
+    const s = this.state;
+    const allRooms = ['Bunny','Goldfish','Duckling','Ladybug','Caterpillar','Turtles','Dragonfly','Butterfly','Frog','Cardinal','Owl'];
+    const deck = this.needs;
+    const card = { ...deck[s.swipe % deck.length], due: 'Needed by ' + deck[s.swipe % deck.length].due };
+    return {
+      rooms: allRooms.map(name => {
+        const on = s.rooms.includes(name);
+        return { name, on, off: !on, toggle: () => this.setState(st => ({ rooms: on ? st.rooms.filter(r => r !== name) : [...st.rooms, name] })) };
+      }),
+      needs: this.needs.map(n => ({ ...n, later: !n.soon, due: n.soon ? 'By ' + n.due : n.due })),
+      card, swipePos: (s.swipe % deck.length) + 1, swipeTotal: deck.length,
+      skip: () => this.setState(st => ({ swipe: st.swipe + 1 })),
+      qty: s.qty,
+      dec: () => this.setState(st => ({ qty: Math.max(1, st.qty - 1) })),
+      inc: () => this.setState(st => ({ qty: Math.min(3, st.qty + 1) })),
+      itemChips: this.chips(['This weekend', '2 weeks', '1 month', 'No rush', 'Pick a date'], s.itemExp, 'itemExp'),
+      needChips: this.chips(['This week', 'Oct 15', '1 month', 'No rush', 'Pick a date'], s.needExp, 'needExp'),
+      needQty: s.needQty,
+      needDec: () => this.setState(st => ({ needQty: Math.max(1, st.needQty - 1) })),
+      needInc: () => this.setState(st => ({ needQty: st.needQty + 1 })),
+      items: this.items.map(it => {
+        const c = s.claimed.includes(it.title);
+        return { ...it, claimed: c, open: !c, toggle: () => this.setState(st => ({ claimed: c ? st.claimed.filter(t => t !== it.title) : [...st.claimed, it.title] })) };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>
