@@ -27,7 +27,7 @@ The screen references (1a–1j) point to [`design/Share Shelf.dc.html`](../desig
 
 ## C. The community
 - [x] Roughly how many families and staff? → [research/cecc-size.md](research/cecc-size.md)
-- [ ] One adult per family using it, or two?
+- [x] One adult per family, or two? → [0004: One email = one account](decisions/0004-one-email-one-account.md)
 - [ ] How people relate to each other: families, staff, board, and anyone who is more than one of those.
 
 ## D. Trust and privacy
@@ -63,7 +63,6 @@ Each of these waits on the Part 1 answers listed next to it.
 ## People and roles
 
 - [ ] Someone who is both a parent and on staff. 1b makes them pick one.
-- [ ] Households with more than one adult: two parents, split households, grandparents or nannies who do drop-off.
 - [ ] Staff with no classroom (director, floaters), co-teachers sharing one wishlist.
 - [ ] The start of each school year: families leaving, new families joining, kids changing rooms.
 
