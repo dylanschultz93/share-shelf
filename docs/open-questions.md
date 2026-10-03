@@ -38,7 +38,9 @@ The screen references (1a–1j) point to [`design/Share Shelf.dc.html`](../desig
 - [x] How sure do we need to be that someone belongs? → Covered by [0002](decisions/0002-who-gets-in.md) and [0008](decisions/0008-browse-before-approval.md)
 
 ## E. Everyday use
-- [ ] What devices do people use? How often would they open it?
+- [x] What devices? → [0009: A mobile-first web app that can be installed](decisions/0009-mobile-first-web-app.md)
+- [ ] Classroom iPads may be shared by several teachers. Whose account is signed in?
+- [ ] How often would people open it?
 - [ ] How do people find it, and how do they hear about new things?
 
 ---
@@ -51,7 +53,7 @@ Each of these waits on the Part 1 answers listed next to it.
 - [ ] **Database** (B, C, D). At this school's size, volume isn't a concern. Who runs it and how matters more.
 - [ ] **Sign-in** (D, E). Note: on iPhone, an email link alone can open in the wrong browser. An email with both a link and a code avoids that.
 - [ ] **User identity:** individual accounts or households, and roles (C, D)
-- [ ] **Web app or App Store app** (E). The working assumption is a mobile web app.
+- [x] **Web app or App Store app** → [0009](decisions/0009-mobile-first-web-app.md)
 - [ ] **Email and notifications** (E)
 
 ---
