@@ -16,7 +16,7 @@ The screen references (1a–1j) point to [`design/Share Shelf.dc.html`](../desig
 
 ## A. The long term
 - [x] What happens when the founder leaves? → [0001: The school runs it](decisions/0001-school-runs-it.md)
-- [ ] How does the school run its website today: who, with what tools, and how comfortable are they with tech?
+- [ ] How does the school run its website today? Partly answered from the outside → [research/school-tech-today.md](research/school-tech-today.md). Still unknown: *who* edits it.
 - [ ] One school, or built so other schools can use it (white-label)? How seriously, and how soon?
 
 ## B. Running it day to day
