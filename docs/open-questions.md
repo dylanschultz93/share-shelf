@@ -49,6 +49,8 @@ The screen references (1a–1j) point to [`design/Share Shelf.dc.html`](../desig
 
 Each of these waits on the Part 1 answers listed next to it.
 
+- [x] **Who owns the accounts** → [0012: communications@claytonecc.org](decisions/0012-account-owner.md)
+- [ ] **Where the code lives long-term:** personal GitHub, or a GitHub organization owned by the school?
 - [ ] **Hosting** (A, B)
 - [ ] **Database** (B, C, D). At this school's size, volume isn't a concern. Who runs it and how matters more.
 - [x] **Sign-in** → [0011: 6-digit email code](decisions/0011-sign-in-with-email-code.md)
