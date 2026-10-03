@@ -28,7 +28,8 @@ The screen references (1a–1j) point to [`design/Share Shelf.dc.html`](../desig
 ## C. The community
 - [x] Roughly how many families and staff? → [research/cecc-size.md](research/cecc-size.md)
 - [x] One adult per family, or two? → [0004: One email = one account](decisions/0004-one-email-one-account.md)
-- [ ] How people relate to each other: families, staff, board, and anyone who is more than one of those.
+- [x] Roles → [0005: Roles are defined by what people can do](decisions/0005-roles-by-action.md)
+- [ ] Which classroom(s) can a teacher act for? What does an admin with no classroom post or claim for?
 
 ## D. Trust and privacy
 - [ ] Who should see what? What's sensitive?
@@ -57,12 +58,12 @@ Each of these waits on the Part 1 answers listed next to it.
 
 ## What the product is
 
-- [ ] **Who can claim giveaways?** Teachers only, or parents from other parents too? The design says everyone sees both tabs, but 1h says "if a *teacher* claims it." Teachers only keeps every handoff at a classroom. Parent to parent adds pickups, contact between families and moderation.
+- [x] **Who can claim giveaways?** → Teachers and admins only, for a classroom ([0005](decisions/0005-roles-by-action.md))
 - [ ] **What's in v1?** Wishlist only, Up for grabs only, or both? The wishlist (teacher asks, parent brings it to the classroom) has the clearest value and the fewest edge cases.
 
 ## People and roles
 
-- [ ] Someone who is both a parent and on staff. 1b makes them pick one.
+- [x] Someone who is both a parent and on staff → teacher role ([0005](decisions/0005-roles-by-action.md))
 - [ ] Staff with no classroom (director, floaters), co-teachers sharing one wishlist.
 - [ ] The start of each school year: families leaving, new families joining, kids changing rooms.
 
