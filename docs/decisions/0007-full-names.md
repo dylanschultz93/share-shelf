@@ -16,4 +16,4 @@ What should people see about each other?
 ## What this affects
 - Each account stores a name as well as an email.
 - People can edit their own name. Admins can fix names too.
-- Profile photos and a directory were suggested but deferred. See [ideas-for-later.md](../ideas-for-later.md).
+- Profile photos and a directory were suggested and deferred ([principle 3](../principles.md)). If the idea is a good one, it will come up again.
