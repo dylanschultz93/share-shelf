@@ -39,7 +39,7 @@ The screen references (1a–1j) point to [`design/Share Shelf.dc.html`](../desig
 
 ## E. Everyday use
 - [x] What devices? → [0009: A mobile-first web app that can be installed](decisions/0009-mobile-first-web-app.md)
-- [ ] Classroom iPads may be shared by several teachers. Whose account is signed in?
+- [x] Shared classroom iPads → fine if posts show whoever is signed in ([0009 addendum](decisions/0009-mobile-first-web-app.md))
 - [ ] How often would people open it?
 - [ ] How do people find it, and how do they hear about new things?
 
