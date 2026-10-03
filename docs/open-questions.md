@@ -41,7 +41,7 @@ The screen references (1a–1j) point to [`design/Share Shelf.dc.html`](../desig
 - [x] What devices? → [0009: A mobile-first web app that can be installed](decisions/0009-mobile-first-web-app.md)
 - [x] Shared classroom iPads → fine if posts show whoever is signed in ([0009 addendum](decisions/0009-mobile-first-web-app.md))
 - [ ] How often would people open it?
-- [ ] How do people find it, and how do they hear about new things?
+- [x] How do people hear about things? → [0010: Only when something happens to your post](decisions/0010-notifications.md)
 
 ---
 
