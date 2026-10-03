@@ -20,8 +20,9 @@ The screen references (1a–1j) point to [`design/Share Shelf.dc.html`](../desig
 - [ ] One school, or built so other schools can use it (white-label)? How seriously, and how soon?
 
 ## B. Running it day to day
-- [ ] Who approves new people, removes posts and fixes problems: the office, the director, the board?
-- [ ] Does the school have a family roster or directory? Do staff have school email addresses?
+- [x] Who approves new people? → [0002: A starting list, then one admin approves](decisions/0002-who-gets-in.md)
+- [ ] Who removes posts and fixes problems? (Probably the same admin.)
+- [x] ~~Use the school's family roster?~~ No. Procare matching was ruled out in [0002](decisions/0002-who-gets-in.md).
 - [ ] Money: does it need to be free to run, or can the school cover a small monthly cost?
 
 ## C. The community
