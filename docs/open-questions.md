@@ -1,6 +1,10 @@
 # Open questions
 
-The backlog of decisions still to make. **Tier 1** shapes everything else, so it comes first. Later tiers get more detailed and mostly depend on earlier answers.
+We work through these in order, one at a time:
+
+1. **Part 1: The facts.** Questions about people and the school, with no technical answers yet.
+2. **Part 2: Technical decisions.** Each one follows from Part 1.
+3. **Part 3: Features and details.**
 
 When a question is settled, write it up in [`decisions/`](decisions/) and check it off here with a link.
 
@@ -8,32 +12,61 @@ The screen references (1a–1j) point to [`design/Share Shelf.dc.html`](../desig
 
 ---
 
-## Tier 1: What the product is
+# Part 1: The facts
 
-These change the scope, the data model and who the app is for.
+## A. The long term
+- [x] What happens when the founder leaves? → [0001: The school runs it](decisions/0001-school-runs-it.md)
+- [ ] How does the school run its website today: who, with what tools, and how comfortable are they with tech?
+- [ ] One school, or built so other schools can use it (white-label)? How seriously, and how soon?
+
+## B. Running it day to day
+- [ ] Who approves new people, removes posts and fixes problems: the office, the director, the board?
+- [ ] Does the school have a family roster or directory? Do staff have school email addresses?
+- [ ] Money: does it need to be free to run, or can the school cover a small monthly cost?
+
+## C. The community
+- [ ] Roughly how many families and staff? One adult per family using it, or two?
+- [ ] How people relate to each other: families, staff, board, and anyone who is more than one of those.
+
+## D. Trust and privacy
+- [ ] Who should see what? What's sensitive?
+- [ ] How sure do we need to be that someone really belongs to the school?
+
+## E. Everyday use
+- [ ] What devices do people use? How often would they open it?
+- [ ] How do people find it, and how do they hear about new things?
+
+---
+
+# Part 2: Technical decisions
+
+Each of these waits on the Part 1 answers listed next to it.
+
+- [ ] **Hosting** (A, B)
+- [ ] **Database** (B, C, D). At this school's size, volume isn't a concern. Who runs it and how matters more.
+- [ ] **Sign-in** (D, E). Note: on iPhone, an email link alone can open in the wrong browser. An email with both a link and a code avoids that.
+- [ ] **User identity:** individual accounts or households, and roles (C, D)
+- [ ] **Web app or App Store app** (E). The working assumption is a mobile web app.
+- [ ] **Email and notifications** (E)
+
+---
+
+# Part 3: Features and details
+
+## What the product is
 
 - [ ] **Who can claim giveaways?** Teachers only, or parents from other parents too? The design says everyone sees both tabs, but 1h says "if a *teacher* claims it." Teachers only keeps every handoff at a classroom. Parent to parent adds pickups, contact between families and moderation.
 - [ ] **What's in v1?** Wishlist only, Up for grabs only, or both? The wishlist (teacher asks, parent brings it to the classroom) has the clearest value and the fewest edge cases.
-- [ ] **Is this for CECC only, or built for any school?** This affects how much gets hardcoded (classroom names, branding, the approval flow) and whether multiple schools could ever share one install.
-- [ ] **Who runs it long term?** Who owns the accounts, pays for the domain and handles problems once the founding parent's kid has aged out? The answer should push the stack toward low maintenance.
 - [ ] **Does the center have rules about what can come into a classroom?** Licensed centers often ban recalled toys, choking hazards in toddler rooms, car seats and cribs, and food. Ask the director. This may shape what can be posted at all.
 
-## Tier 2: Platform and access
-
-- [ ] **Web app or App Store app?** The working assumption is a mobile web app that can be added to the home screen, because people arrive from a QR code or an email link.
-- [ ] **How does sign-in work?** An email link alone breaks on iPhone when the link opens in the wrong browser (for example, inside the Gmail app). The proposal is an email with both a link and a 6-digit code.
-- [ ] **How do people get approved?** A board member approves each new person (1b). Could we instead approve people automatically from a family roster or a staff email domain, and only send unknown people to the board?
-- [ ] **Stack.** The proposal is Next.js on Vercel, Supabase (database, sign-in, photo storage) and Resend (email), all on free tiers. This depends on the "who runs it" answer.
-- [ ] **What's the privacy stance?** For example: no children's faces in photos, whether giver names are shown, and what's visible to people who haven't been approved yet.
-
-## Tier 3: People and roles
+## People and roles
 
 - [ ] Someone who is both a parent and on staff. 1b makes them pick one.
 - [ ] Households with more than one adult: two parents, split households, grandparents or nannies who do drop-off.
 - [ ] Staff with no classroom (director, floaters), co-teachers sharing one wishlist.
 - [ ] The start of each school year: families leaving, new families joining, kids changing rooms.
 
-## Tier 4: Core flows
+## Core flows
 
 - [ ] **Browsing:** gallery (1c) or swipe (1d)? The leaning is gallery for everyone, filtered to your child's rooms and sorted by urgency.
 - [ ] **Posting a giveaway:** keep the custom camera screen (1g), or use the phone's standard camera and photo picker?
@@ -44,7 +77,7 @@ These change the scope, the data model and who the app is for.
 - [ ] **Big items** (a play kitchen) that can't come in at drop-off: how does the handoff work?
 - [ ] **The "Mine" screen:** what I've posted, what I've claimed, and what's coming to my classroom.
 
-## Tier 5: Notifications and coming back
+## Notifications and coming back
 
 - [ ] Email only, or also push notifications for people who add it to their home screen?
 - [ ] A weekly digest email ("3 new asks in Owl room"): opt in or opt out? Which day?
@@ -52,7 +85,7 @@ These change the scope, the data model and who the app is for.
 - [ ] Thanking people and closing the loop without photos of children.
 - [ ] Keeping it from feeling like pressure: no leaderboards, and not showing who gave what.
 
-## Tier 6: Details
+## Details
 
 - [ ] Expiration presets: "this weekend" posted on a Sunday, dates that fall on school breaks, what happens to claimed items that expire.
 - [ ] Two people claiming the last few at the same moment. The server has to reduce the count safely.
