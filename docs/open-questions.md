@@ -51,7 +51,7 @@ Each of these waits on the Part 1 answers listed next to it.
 
 - [ ] **Hosting** (A, B)
 - [ ] **Database** (B, C, D). At this school's size, volume isn't a concern. Who runs it and how matters more.
-- [ ] **Sign-in** (D, E). Note: on iPhone, an email link alone can open in the wrong browser. An email with both a link and a code avoids that.
+- [x] **Sign-in** → [0011: 6-digit email code](decisions/0011-sign-in-with-email-code.md)
 - [ ] **User identity:** individual accounts or households, and roles (C, D)
 - [x] **Web app or App Store app** → [0009](decisions/0009-mobile-first-web-app.md)
 - [ ] **Email and notifications** (E)

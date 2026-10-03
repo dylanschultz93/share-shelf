@@ -19,4 +19,12 @@ A weekly digest of new posts is a nice-to-have, so it waits ([principle 3](../pr
 
 ## What this affects
 - Email is the only notification channel (see [0009](0009-mobile-first-web-app.md)).
-- **Pending:** a few necessary system emails (sign-in, approval), proposed separately.
+
+## System emails
+These are also required, because the app doesn't work without them:
+
+- **Sign-in code** ([0011](0011-sign-in-with-email-code.md)).
+- **"You're approved"** to a new person, so they know they can now post and claim.
+- **"Someone is waiting for approval"** to the admin, so requests don't sit unnoticed.
+
+No "your post expired" email. The post just comes down.
