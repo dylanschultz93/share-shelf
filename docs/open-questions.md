@@ -34,8 +34,8 @@ The screen references (1a–1j) point to [`design/Share Shelf.dc.html`](../desig
 
 ## D. Trust and privacy
 - [x] What do people see about each other? → [0007: Full names](decisions/0007-full-names.md)
-- [ ] Anything else sensitive? (Photos of items, what non-approved people can see.)
-- [ ] How sure do we need to be that someone really belongs to the school?
+- [x] What can unapproved people see? → [0008: Browse with names hidden](decisions/0008-browse-before-approval.md)
+- [x] How sure do we need to be that someone belongs? → Covered by [0002](decisions/0002-who-gets-in.md) and [0008](decisions/0008-browse-before-approval.md)
 
 ## E. Everyday use
 - [ ] What devices do people use? How often would they open it?
