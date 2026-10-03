@@ -29,7 +29,8 @@ The screen references (1a–1j) point to [`design/Share Shelf.dc.html`](../desig
 - [x] Roughly how many families and staff? → [research/cecc-size.md](research/cecc-size.md)
 - [x] One adult per family, or two? → [0004: One email = one account](decisions/0004-one-email-one-account.md)
 - [x] Roles → [0005: Roles are defined by what people can do](decisions/0005-roles-by-action.md)
-- [ ] Which classroom(s) can a teacher act for? What does an admin with no classroom post or claim for?
+- [x] Which classroom(s) can a teacher act for? → [0006: Any room, usual room as default](decisions/0006-teachers-any-room.md)
+- [ ] Does an admin need a "whole school" option? (Probably not until asked.)
 
 ## D. Trust and privacy
 - [ ] Who should see what? What's sensitive?
@@ -64,7 +65,7 @@ Each of these waits on the Part 1 answers listed next to it.
 ## People and roles
 
 - [x] Someone who is both a parent and on staff → teacher role ([0005](decisions/0005-roles-by-action.md))
-- [ ] Staff with no classroom (director, floaters), co-teachers sharing one wishlist.
+- [ ] Co-teachers sharing one room's wishlist. (Floaters are covered by [0006](decisions/0006-teachers-any-room.md).)
 - [ ] The start of each school year: families leaving, new families joining, kids changing rooms.
 
 ## Core flows
