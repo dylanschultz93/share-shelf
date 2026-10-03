@@ -17,13 +17,13 @@ The screen references (1a–1j) point to [`design/Share Shelf.dc.html`](../desig
 ## A. The long term
 - [x] What happens when the founder leaves? → [0001: The school runs it](decisions/0001-school-runs-it.md)
 - [ ] How does the school run its website today? Partly answered from the outside → [research/school-tech-today.md](research/school-tech-today.md). Still unknown: *who* edits it.
-- [ ] One school, or built so other schools can use it (white-label)? How seriously, and how soon?
+- [ ] One school, or built so other schools can use it (white-label)? Partly answered: CECC first, possibly a paid product later ([0003](decisions/0003-cost.md)). Still open: one shared install for many schools, or a separate copy per school?
 
 ## B. Running it day to day
 - [x] Who approves new people? → [0002: A starting list, then one admin approves](decisions/0002-who-gets-in.md)
 - [ ] Who removes posts and fixes problems? (Probably the same admin.)
 - [x] ~~Use the school's family roster?~~ No. Procare matching was ruled out in [0002](decisions/0002-who-gets-in.md).
-- [ ] Money: does it need to be free to run, or can the school cover a small monthly cost?
+- [x] Money → [0003: Aim for free; school pays at cost later](decisions/0003-cost.md)
 
 ## C. The community
 - [ ] Roughly how many families and staff? One adult per family using it, or two?
