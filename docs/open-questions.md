@@ -49,8 +49,7 @@ The screen references (1a–1j) point to [`design/Share Shelf.dc.html`](../desig
 
 Each of these waits on the Part 1 answers listed next to it.
 
-- [x] **Who owns the accounts** → [0012: communications@claytonecc.org](decisions/0012-account-owner.md)
-- [x] **Where the code lives** → the founder's GitHub, permanently. The school owns its accounts and data, not the code ([0012](decisions/0012-account-owner.md)).
+- [x] **Who owns the code and infrastructure** → the founder. The school is a customer ([0012](decisions/0012-account-owner.md)).
 - [ ] **Hosting** (A, B)
 - [ ] **Database** (B, C, D). At this school's size, volume isn't a concern. Who runs it and how matters more.
 - [x] **Sign-in** → [0011: 6-digit email code](decisions/0011-sign-in-with-email-code.md)

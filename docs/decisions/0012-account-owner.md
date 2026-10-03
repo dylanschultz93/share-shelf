@@ -1,21 +1,22 @@
-# 0012: communications@claytonecc.org owns every account
+# 0012: The founder runs the infrastructure. The school is a customer
 
-**Status:** Decided (2026-10-02)
+**Status:** Decided (2026-10-02). Replaces an earlier version that had the school owning the service accounts.
 
 ## Question
-Which email address owns the app's service accounts (hosting, database, email sending, domain)?
+Who owns the code, the hosting and the service accounts (database, email sending, domain)?
 
 ## Decision
-**`communications@claytonecc.org`**, a shared school address in the school's Google Workspace, is the owner of every service account from day one.
+Share Shelf works like any other app:
+
+- **The founder owns the code and runs the infrastructure.** The repo ([dylanschultz93/share-shelf](https://github.com/dylanschultz93/share-shelf), MIT license), hosting, database and email-sending accounts are all the founder's.
+- **The school is a customer.** It uses the app. Its admin runs things *inside* the app: approving people, removing posts, editing classrooms ([0001](0001-school-runs-it.md)).
+- **The school never touches hosting, servers or service accounts.**
 
 ## Why
-- It belongs to the school, not a person, so the school already owns everything ([0001](0001-school-runs-it.md)).
-- The founder already has access, so setup isn't blocked on anyone.
-- **Handoff is just stepping away.** Nothing has to be transferred. The school keeps access through the shared inbox.
+- That's how apps work. Customers don't own their vendor's code or infrastructure.
+- Infrastructure at this size mostly runs itself. The founder's time-consuming jobs (approving people, managing content) go to the school's admin inside the app.
 
 ## What this affects
-- Every new service gets signed up under this address. Billing (during the trial and after) attaches to these accounts ([0003](0003-cost.md)).
-- Prefer services that allow **one owner account plus extra team members,** so the founder or a future helper can be added and removed without sharing the inbox's password.
-- **The code is separate. It stays in the founder's GitHub** ([dylanschultz93/share-shelf](https://github.com/dylanschultz93/share-shelf)), under the MIT license in the founder's name. The founder owns the product. The school owns its running copy and its data. That's the normal vendor arrangement.
-- **When the founder steps away,** the school's app keeps running as is. If the school ever needs changes, the code is open source, so anyone can copy (fork) it and work from there. Nothing has to be transferred.
-- **Detail for the hosting decision:** the school's hosting account has to deploy code from the founder's repo. How that connection works depends on the host.
+- Costs land on the founder's accounts. After the trial, the school reimburses at cost ([0003](0003-cost.md)).
+- `communications@claytonecc.org` (a shared school inbox the founder can access) is a good candidate for the **first admin account inside the app.**
+- **Still open:** what happens to the running app if the founder ever stops operating it entirely.
