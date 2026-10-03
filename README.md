@@ -7,7 +7,7 @@ A small web app that helps a preschool community pass things around:
 
 Handoff happens at the classroom during drop-off or pickup. There's no shipping, payments or meetups.
 
-It's being built first for Clayton Early Childhood Center (CECC), a preschool with 11 classrooms. The code is open source so other schools can use it too.
+It's being built for Clayton Early Childhood Center (CECC), a school for ages 6 weeks to 5 years with 11 classrooms. The code is open source, but it's designed for this one school.
 
 ## Status
 

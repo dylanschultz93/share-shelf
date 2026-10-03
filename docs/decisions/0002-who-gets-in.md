@@ -13,7 +13,7 @@ How do we keep Share Shelf limited to the school community, and who lets new peo
 ## Why
 - **Starting from a list** makes launch easy. Most people get in on day one, and later the approval queue is only new families, which is a small, steady trickle.
 - **One approver** keeps it simple and matches [decision 0001](0001-school-runs-it.md) (the school runs it).
-- **We passed on matching against Procare automatically.** It would be elegant, but it's technically hard, ties us to one vendor and doesn't fit other schools. See [principle 3](../principles.md).
+- **We passed on matching against Procare automatically.** It would be elegant, but it's technically hard, and ties us to one vendor. See [principle 3](../principles.md).
 - **We passed on "anyone with the link."** It's simpler, but it felt too open for a school community.
 
 ## What this affects
