@@ -33,7 +33,8 @@ The screen references (1a–1j) point to [`design/Share Shelf.dc.html`](../desig
 - [ ] Does an admin need a "whole school" option? (Probably not until asked.)
 
 ## D. Trust and privacy
-- [ ] Who should see what? What's sensitive?
+- [x] What do people see about each other? → [0007: Full names](decisions/0007-full-names.md)
+- [ ] Anything else sensitive? (Photos of items, what non-approved people can see.)
 - [ ] How sure do we need to be that someone really belongs to the school?
 
 ## E. Everyday use

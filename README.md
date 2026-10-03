@@ -16,6 +16,8 @@ It's being built for Clayton Early Childhood Center (CECC), a school for ages 6 
 - [`design/`](design/): first-pass screens from Claude Design (sign-in, onboarding, browse, claim, post). Open `design/Share Shelf.dc.html` in a browser to see them.
 - [`docs/open-questions.md`](docs/open-questions.md): the decision backlog, ordered from big picture to details.
 - [`docs/decisions/`](docs/decisions/): one short file per decision once it's made.
+- [`docs/principles.md`](docs/principles.md): the rules of thumb we use to keep scope small.
+- [`docs/ideas-for-later.md`](docs/ideas-for-later.md): good ideas we're deliberately not building yet.
 
 ## Working assumptions
 
