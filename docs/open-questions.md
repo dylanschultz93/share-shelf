@@ -57,7 +57,6 @@ Each of these waits on the Part 1 answers listed next to it.
 
 - [ ] **Who can claim giveaways?** Teachers only, or parents from other parents too? The design says everyone sees both tabs, but 1h says "if a *teacher* claims it." Teachers only keeps every handoff at a classroom. Parent to parent adds pickups, contact between families and moderation.
 - [ ] **What's in v1?** Wishlist only, Up for grabs only, or both? The wishlist (teacher asks, parent brings it to the classroom) has the clearest value and the fewest edge cases.
-- [ ] **Does the center have rules about what can come into a classroom?** Licensed centers often ban recalled toys, choking hazards in toddler rooms, car seats and cribs, and food. Ask the director. This may shape what can be posted at all.
 
 ## People and roles
 
