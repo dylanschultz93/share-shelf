@@ -78,7 +78,7 @@ Each of these waits on the Part 1 answers listed next to it.
 
 - [x] **Browsing** → [0019: Gallery](decisions/0019-gallery-browsing.md)
 - [x] **Posting a giveaway: camera** → use the phone's standard camera and photo picker ([0009](decisions/0009-mobile-first-web-app.md)), not a custom camera screen
-- [ ] **Claims that go stale:** someone claims and never brings it. Does the claim expire? Can the teacher reopen it?
+- [x] **Claims that go stale** → [0020: Claims don't expire; either side can release](decisions/0020-claims-dont-expire.md)
 - [ ] **Things that arrive without a claim:** can a teacher close or reduce a need by hand?
 - [ ] **"I ordered it online"** from the buy link: is that a claim?
 - [ ] **Ongoing needs** ("30 paper towel tubes, no rush") versus dated needs ("rain boots by Thursday"): is that one kind of post or two?
