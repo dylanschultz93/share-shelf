@@ -76,8 +76,8 @@ Each of these waits on the Part 1 answers listed next to it.
 
 ## Core flows
 
-- [ ] **Browsing:** gallery (1c) or swipe (1d)? The leaning is gallery for everyone, filtered to your child's rooms and sorted by urgency.
-- [ ] **Posting a giveaway:** keep the custom camera screen (1g), or use the phone's standard camera and photo picker?
+- [x] **Browsing** → [0019: Gallery](decisions/0019-gallery-browsing.md)
+- [x] **Posting a giveaway: camera** → use the phone's standard camera and photo picker ([0009](decisions/0009-mobile-first-web-app.md)), not a custom camera screen
 - [ ] **Claims that go stale:** someone claims and never brings it. Does the claim expire? Can the teacher reopen it?
 - [ ] **Things that arrive without a claim:** can a teacher close or reduce a need by hand?
 - [ ] **"I ordered it online"** from the buy link: is that a claim?
