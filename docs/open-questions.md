@@ -21,7 +21,7 @@ The screen references (1a–1j) point to [`design/Share Shelf.dc.html`](../desig
 
 ## B. Running it day to day
 - [x] Who approves new people? → [0002: A starting list, then one admin approves](decisions/0002-who-gets-in.md)
-- [ ] Who removes posts and fixes problems? (Probably the same admin.)
+- [x] Who removes posts and fixes problems? → the admin ([0005](decisions/0005-roles-by-action.md))
 - [x] ~~Use the school's family roster?~~ No. Procare matching was ruled out in [0002](decisions/0002-who-gets-in.md).
 - [x] Money → [0003: Aim for free; school pays at cost later](decisions/0003-cost.md)
 
@@ -87,16 +87,12 @@ Each of these waits on the Part 1 answers listed next to it.
 
 ## Notifications and coming back
 
-- [ ] Email only, or also push notifications for people who add it to their home screen?
-- [ ] A weekly digest email ("3 new asks in Owl room"): opt in or opt out? Which day?
-- [ ] Reminder the day before a claimed item is due.
-- [ ] Thanking people and closing the loop without photos of children.
-- [ ] Keeping it from feeling like pressure: no leaderboards, and not showing who gave what.
+Mostly settled by [0010](decisions/0010-notifications.md): email only, sent only when your own post is claimed. A weekly digest and due-date reminders wait until real use shows a need ([principle 3](principles.md)).
 
 ## Details
 
 - [ ] Expiration presets: "this weekend" posted on a Sunday, dates that fall on school breaks, what happens to claimed items that expire.
 - [ ] Two people claiming the last few at the same moment. The server has to reduce the count safely.
-- [ ] Moderation: who can take a post down, and scope creep (selling things, furniture).
+- [ ] Scope creep: selling things, furniture. (Admins can remove posts, per [0005](decisions/0005-roles-by-action.md).)
 - [ ] **Launch plan:** pilot with a couple of classrooms or launch to everyone? Note Resend's 100-emails-a-day free limit ([0016](decisions/0016-email-resend.md)). Also the QR poster and newsletter copy.
 - [ ] Spam folders: the first sign-in email may land in spam.
