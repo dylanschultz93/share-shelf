@@ -16,3 +16,4 @@ Like Substack: **enter your email, get a 6-digit code by email, type it in.** No
 ## What this affects
 - The sign-in email is a required system email ([0010](0010-notifications.md)).
 - Codes should expire after a short time, and attempts should be limited.
+- **How it's built:** Supabase's built-in email codes ([0014](0014-database-supabase.md)), with the email template set to show the 6-digit code instead of a link.

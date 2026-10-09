@@ -51,11 +51,12 @@ Each of these waits on the Part 1 answers listed next to it.
 
 - [x] **Who owns the code and infrastructure** → the founder. The school is a customer ([0012](decisions/0012-account-owner.md)).
 - [x] **Hosting** → [0013: Vercel free plan for the trial, revisit after](decisions/0013-hosting.md)
-- [ ] **Database** (B, C, D). At this school's size, volume isn't a concern. Who runs it and how matters more.
+- [x] **Database** → [0014: Supabase (database, sign-in, photos) + daily keep-alive](decisions/0014-database-supabase.md)
 - [x] **Sign-in** → [0011: 6-digit email code](decisions/0011-sign-in-with-email-code.md)
 - [ ] **User identity:** individual accounts or households, and roles (C, D)
 - [x] **Web app or App Store app** → [0009](decisions/0009-mobile-first-web-app.md)
-- [ ] **Email and notifications** (E)
+- [ ] **App address (domain):** a free vercel.app address, our own domain, or a subdomain of claytonecc.org?
+- [ ] **Email-sending service** (needed for sign-in codes and notifications, [0010](decisions/0010-notifications.md))
 
 ---
 
