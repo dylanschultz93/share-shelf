@@ -50,7 +50,7 @@ The screen references (1a–1j) point to [`design/Share Shelf.dc.html`](../desig
 Each of these waits on the Part 1 answers listed next to it.
 
 - [x] **Who owns the code and infrastructure** → the founder. The school is a customer ([0012](decisions/0012-account-owner.md)).
-- [ ] **Hosting** (A, B)
+- [x] **Hosting** → [0013: Vercel free plan for the trial, revisit after](decisions/0013-hosting.md)
 - [ ] **Database** (B, C, D). At this school's size, volume isn't a concern. Who runs it and how matters more.
 - [x] **Sign-in** → [0011: 6-digit email code](decisions/0011-sign-in-with-email-code.md)
 - [ ] **User identity:** individual accounts or households, and roles (C, D)
