@@ -57,7 +57,7 @@ Each of these waits on the Part 1 answers listed next to it.
 - [x] **Web app or App Store app** → [0009](decisions/0009-mobile-first-web-app.md)
 - [x] **App address (domain)** → [0015: A domain the founder owns](decisions/0015-own-domain.md). Exact name still to pick.
 - [x] **Email-sending service** → [0016: Resend](decisions/0016-email-resend.md)
-- [ ] **App framework and language**
+- [x] **App framework and language** → [0017: Next.js + React + TypeScript + Tailwind](decisions/0017-stack.md)
 
 ---
 

@@ -27,6 +27,16 @@ These come from the first design pass. They aren't decided yet:
 - Posting starts with a photo. Posts expire and come down on their own, and the owner gets an email.
 - Claims are first come, first served, and can be partial ("I'll bring 3 of the 6").
 
+## Stack
+
+| | |
+|---|---|
+| App | Next.js + React + TypeScript + Tailwind ([0017](docs/decisions/0017-stack.md)) |
+| Hosting | Vercel ([0013](docs/decisions/0013-hosting.md)) |
+| Database, sign-in, photos | Supabase ([0014](docs/decisions/0014-database-supabase.md)) |
+| Email | Resend ([0016](docs/decisions/0016-email-resend.md)) |
+| Domain | Owned by the founder, name to be picked ([0015](docs/decisions/0015-own-domain.md)) |
+
 ## Contributing
 
 It's early. For now, the most useful contribution is an opinion on something in [`docs/open-questions.md`](docs/open-questions.md). Open an issue.
