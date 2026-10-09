@@ -55,7 +55,7 @@ Each of these waits on the Part 1 answers listed next to it.
 - [x] **Sign-in** → [0011: 6-digit email code](decisions/0011-sign-in-with-email-code.md)
 - [ ] **User identity:** individual accounts or households, and roles (C, D)
 - [x] **Web app or App Store app** → [0009](decisions/0009-mobile-first-web-app.md)
-- [ ] **App address (domain):** a free vercel.app address, our own domain, or a subdomain of claytonecc.org?
+- [x] **App address (domain)** → [0015: A domain the founder owns](decisions/0015-own-domain.md). Exact name still to pick.
 - [ ] **Email-sending service** (needed for sign-in codes and notifications, [0010](decisions/0010-notifications.md))
 
 ---
