@@ -53,10 +53,11 @@ Each of these waits on the Part 1 answers listed next to it.
 - [x] **Hosting** → [0013: Vercel free plan for the trial, revisit after](decisions/0013-hosting.md)
 - [x] **Database** → [0014: Supabase (database, sign-in, photos) + daily keep-alive](decisions/0014-database-supabase.md)
 - [x] **Sign-in** → [0011: 6-digit email code](decisions/0011-sign-in-with-email-code.md)
-- [ ] **User identity:** individual accounts or households, and roles (C, D)
+- [x] **User identity** → [0004: One email = one account](decisions/0004-one-email-one-account.md), [0005: Roles](decisions/0005-roles-by-action.md)
 - [x] **Web app or App Store app** → [0009](decisions/0009-mobile-first-web-app.md)
 - [x] **App address (domain)** → [0015: A domain the founder owns](decisions/0015-own-domain.md). Exact name still to pick.
-- [ ] **Email-sending service** (needed for sign-in codes and notifications, [0010](decisions/0010-notifications.md))
+- [x] **Email-sending service** → [0016: Resend](decisions/0016-email-resend.md)
+- [ ] **App framework and language**
 
 ---
 
@@ -97,5 +98,5 @@ Each of these waits on the Part 1 answers listed next to it.
 - [ ] Expiration presets: "this weekend" posted on a Sunday, dates that fall on school breaks, what happens to claimed items that expire.
 - [ ] Two people claiming the last few at the same moment. The server has to reduce the count safely.
 - [ ] Moderation: who can take a post down, and scope creep (selling things, furniture).
-- [ ] The QR poster and newsletter copy for launch.
+- [ ] **Launch plan:** pilot with a couple of classrooms or launch to everyone? Note Resend's 100-emails-a-day free limit ([0016](decisions/0016-email-resend.md)). Also the QR poster and newsletter copy.
 - [ ] Spam folders: the first sign-in email may land in spam.
