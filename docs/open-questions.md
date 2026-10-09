@@ -66,7 +66,7 @@ Each of these waits on the Part 1 answers listed next to it.
 ## What the product is
 
 - [x] **Who can claim giveaways?** → Teachers and admins only, for a classroom ([0005](decisions/0005-roles-by-action.md))
-- [ ] **What's in v1?** Wishlist only, Up for grabs only, or both? The wishlist (teacher asks, parent brings it to the classroom) has the clearest value and the fewest edge cases.
+- [x] **What's in v1?** → [0018: Both](decisions/0018-v1-both-flows.md)
 
 ## People and roles
 
